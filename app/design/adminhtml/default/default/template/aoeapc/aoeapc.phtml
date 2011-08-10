@@ -25,3 +25,15 @@ $_helper = $this->helper('aoeapc'); /* @var $_helper Aoe_Apc_Helper_Data */
 	<a href="<?php echo $this->getUrl('aoeapc/apc/clearOpcodeCache', array('key' => Mage::helper('core')->encrypt('secret'))); ?>">clearOpcodeCache</a>
 	<a href="<?php echo $this->getUrl('aoeapc/apc/munin', array('key' => Mage::helper('core')->encrypt('secret'))); ?>">munin</a>
 </div>
+
+<div class="content-header">
+	<table cellspacing="0">
+		<tr>
+			<td><h3><?php echo Mage::helper('adminhtml')->__('Cache configuration') ?></h3></td>
+		</tr>
+	</table>
+</div>
+
+<?php echo $this->getCacheInformation(); ?>
+
+<!--<pre><?php // echo htmlentities((string)Mage::app()->getConfig()->getNode('global/cache')->asNiceXml()); ?></pre>-->

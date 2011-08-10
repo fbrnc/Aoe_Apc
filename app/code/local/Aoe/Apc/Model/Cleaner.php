@@ -1,13 +1,9 @@
 <?php
 
-class Aoe_Apc_Model_Backend extends Zend_Cache_Backend_Apc {
+class Aoe_Apc_Model_Cleaner  {
 
-	/**
-	 * Overwriting clean method to enable cache clearing from cli
-	 *
-	 * @see Zend_Cache_Backend_Apc::clean()
-	 */
-	public function clean($mode = Zend_Cache::CLEANING_MODE_ALL, $tags = array()) {
+	public function clean(Varien_Event $event) {
+		$mode = $event->getMode();
 		if ($mode == Zend_Cache::CLEANING_MODE_ALL && php_sapi_name() == 'cli') {
 			// TODO: make store id configurable
 			$url = Mage::getModel('core/url')->setStore(1)->getUrl('aoeapc/apc/clearUserCache', array('key' => Mage::helper('core')->encrypt('secret')));
@@ -18,7 +14,6 @@ class Aoe_Apc_Model_Backend extends Zend_Cache_Backend_Apc {
 			}
 			return true;
 		}
-		return parent::clean($mode, $tags);
 	}
 
 }

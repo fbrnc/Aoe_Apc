@@ -35,6 +35,24 @@
 			</aoeapc>
 		</blocks>
 
+		<models>
+			<aoeapc>
+				<class>Aoe_Apc_Model</class>
+			</aoeapc>
+		</models>
+
+		<events>
+			<clean_cache>
+				<observers>
+					<aoeapc>
+						<type>singleton</type>
+						<class>aoeapc/cleaner</class>
+						<method>clean</method>
+					</aoeapc>
+				</observers>
+			</clean_cache>
+		</events>
+
 	</global>
 
 	<admin>
