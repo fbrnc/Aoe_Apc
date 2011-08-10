@@ -1,0 +1,4 @@
+app/etc/modules/Aoe_Apc.xml								htdocs/app/etc/modules/Aoe_Apc.xml
+app/code/local/Aoe/Apc/									htdocs/app/code/local/Aoe/Apc/
+app/design/adminhtml/default/default/layout/aoeapc/		htdocs/app/design/adminhtml/default/default/layout/aoeapc/
+app/design/adminhtml/default/default/template/aoeapc/	htdocs/app/design/adminhtml/default/default/template/aoeapc/

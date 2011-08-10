@@ -1,0 +1,27 @@
+<?php
+/* @var $this Aoe_Apc_Block_Adminhtml_ApcControl */
+$_helper = $this->helper('aoeapc'); /* @var $_helper Aoe_Apc_Helper_Data */
+?>
+
+<br/>
+<div class="content-header">
+	<table cellspacing="0">
+		<tr>
+			<td><h3><?php echo Mage::helper('adminhtml')->__('APC') ?></h3></td>
+		</tr>
+	</table>
+</div>
+
+<table>
+	<tr><td><b>Total:</b></td><td><?php echo $_helper->formatBytes($_helper->getMemorySize()); ?></td><tr>
+	<tr><td><b>Used:</b></td><td><?php echo $_helper->formatBytes($_helper->getUsedMemorySize()); ?></td><tr>
+	<tr><td><b>Free:</b></td><td><?php echo $_helper->formatBytes($_helper->getAvailableMemorySize()); ?></td><tr>
+</table>
+
+<div class="apc">
+	APC proxy functions (protected):
+	<a href="<?php echo $this->getUrl('aoeapc/apc/getApcUsedSize', array('key' => Mage::helper('core')->encrypt('secret'))); ?>">getApcUsedSize</a>
+	<a href="<?php echo $this->getUrl('aoeapc/apc/clearUserCache', array('key' => Mage::helper('core')->encrypt('secret'))); ?>">clearUserCache</a>
+	<a href="<?php echo $this->getUrl('aoeapc/apc/clearOpcodeCache', array('key' => Mage::helper('core')->encrypt('secret'))); ?>">clearOpcodeCache</a>
+	<a href="<?php echo $this->getUrl('aoeapc/apc/munin', array('key' => Mage::helper('core')->encrypt('secret'))); ?>">munin</a>
+</div>

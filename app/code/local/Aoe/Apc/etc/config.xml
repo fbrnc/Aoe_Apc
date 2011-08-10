@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+	<modules>
+		<Aoe_Apc>
+			<active>true</active>
+			<codePool>local</codePool>
+			<version>0.0.1</version>
+		</Aoe_Apc>
+	</modules>
+
+	<frontend>
+		<routers>
+			<Aoe_Apc>
+				<use>standard</use>
+				<args>
+					<module>Aoe_Apc</module>
+					<frontName>aoeapc</frontName>
+				</args>
+			</Aoe_Apc>
+		</routers>
+	</frontend>
+
+	<global>
+
+		<helpers>
+			<aoeapc>
+				<class>Aoe_Apc_Helper</class>
+			</aoeapc>
+		</helpers>
+
+		<blocks>
+			<aoeapc>
+				<class>Aoe_Apc_Block</class>
+			</aoeapc>
+		</blocks>
+
+	</global>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Aoe_Apc before="Mage_Adminhtml">Aoe_Apc_Adminhtml</Aoe_Apc>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<adminhtml>
+		<layout>
+			<updates>
+				<aoeapc>
+					<file>aoeapc/aoeapc.xml</file>
+				</aoeapc>
+			</updates>
+		</layout>
+	</adminhtml>
+
+</config>
