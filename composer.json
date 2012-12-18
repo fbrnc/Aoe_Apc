@@ -1,0 +1,17 @@
+{
+    "name":"fbrnc/aoe_apc",
+    "type":"magento-module",
+    "license":"OSL-3.0",
+    "homepage":"https://github.com/fbrnc/Aoe_Apc",
+    "description":"Apc component for Aoe_CacheCleaner Magento extension.",
+    "authors":[
+        {
+            "name":"Fabrizio Branca",
+            "email":"mail@{firstname}-{lastname}.de"
+        }
+    ],
+    "require":{
+        "magento-hackathon/magento-composer-installer":"dev-master",
+        "fbrnc/aoe_cachecleaner":"dev-master"
+    }
+}
