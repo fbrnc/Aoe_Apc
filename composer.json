@@ -11,7 +11,7 @@
         }
     ],
     "require":{
-        "magento-hackathon/magento-composer-installer":"dev-master",
-        "fbrnc/aoe_cachecleaner":"dev-master"
+        "magento-hackathon/magento-composer-installer":"*",
+        "fbrnc/aoe_cachecleaner":"*"
     }
 }
